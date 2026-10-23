@@ -42,9 +42,9 @@ SELECT t.task_id
 
 -- 6. Выведите всех гномов и их ближайших родственников, указав тип родственных отношений.
 
-SELECT d1.name name
+SELECT d1.name dwarf_1_name
      , r.relationship
-     , d2.name
+     , d2.name dwarf_2_name
   FROM dwarves d1
   JOIN relationships r on r.dwarf_id = d1.dwarf_id
   JOIN dwarves d2 on d2.dwarf_id = r.related_to;
