@@ -69,7 +69,7 @@ SELECT w.workshop_Id
 -- SQUAD_MEMBERS squad_id, dwarf_id;         -- Члены отряда
 -- SQUAD_EQUIPMENT squad_id, equipment_id;   -- Снаряжение отряда
 -- SQUAD_OPERATIONS operation_id, squad_id;  -- Операции отряда
--- SQUAD_TRAINING schedule_id, schedule_id;  -- Тренировки отряда
+-- SQUAD_TRAINING schedule_id, squad_id;     -- Тренировки отряда
 -- SQUAD_BATTLES report_id, squad_id;        -- Отчеты о битвах отряда
 
 SELECT s.squad_id
