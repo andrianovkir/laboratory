@@ -227,7 +227,7 @@ environment_intervals AS(
 attack_by_env_analytics AS(
     SELECT et.itv_start
          , et.itv_end
-         , et.weather_agg
+         , et.agg_weather
          , et.agg_weather_coeff
          , ca.location_id
          , COUNT(DISTINCT ca.attack_id) attacks_count
