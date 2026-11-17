@@ -1,5 +1,6 @@
 # Laboratory
 
-    Current Track: Сложные задачки SQL (база бэка)
-    Current Task : #1
+    Current Track: ООАП
+
+    Completed Track: Сложные задачки SQL (база бэка)
   
