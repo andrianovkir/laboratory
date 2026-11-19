@@ -4,14 +4,21 @@ import java.util.Collection;
 
 public abstract class CursoredLinkedList<T>
 {
+    public static final int GET_STATUS_NIL = 0;
     public static final int GET_STATUS_OK = 1;
     public static final int GET_STATUS_ERR = 2;
+    public static final int PUT_STATUS_NIL = 0;
     public static final int PUT_STATUS_OK = 1;
     public static final int PUT_STATUS_ERR = 2;
+    public static final int REMOVE_STATUS_NIL = 0;
     public static final int REMOVE_STATUS_OK = 1;
     public static final int REMOVE_STATUS_ERR = 2;
+    public static final int FIND_STATUS_NIL = 0;
     public static final int FIND_STATUS_OK = 1;
     public static final int FIND_STATUS_ERR = 2;
+    public static final int REPLACE_STATUS_NIL = 0;
+    public static final int REPLACE_STATUS_OK = 1;
+    public static final int REPLACE_STATUS_ERR = 2;
 
     public CursoredLinkedList(){} //Constructor. Returns new empty LinkedList
 
@@ -32,11 +39,8 @@ public abstract class CursoredLinkedList<T>
     //Postconditions: value on cursor replaced by received value.
     public abstract void replace(T value);
     //Preconditions : list not empty. Cursor set on some value.
-    //Postconditions: current element deleted. Cursor set to right neighbor if possible.
+    //Postconditions: current element deleted. Cursor set to: right neighbor if possible, left neighbor is possible, not initialized otherwise.
     public abstract void remove();
-    //Preconditions : list not empty.
-    //Postconditions: Deleted first entry of value. Cursor set to its right neighbor if possible.
-    public abstract void remove(T value);
     //Preconditions : list not empty.
     //Postconditions: Deleted all entries of value. Cursor set to lasts right neighbor if possible.
     public abstract void removeAll(T value);
@@ -49,14 +53,14 @@ public abstract class CursoredLinkedList<T>
     public abstract void head();
     //Preconditions : list not empty.
     public abstract void tail();
-    //Preconditions : list not empty.
+    //Preconditions : list not empty + is not tail.
     public abstract void next();
     //Preconditions : list not empty.
     public abstract void find(T value);
 
     //Requests List
     //Precondition: -
-    public abstract boolean size();
+    public abstract int size();
     //Precondition: -
     public abstract int getLastGetStatus();
     //Precondition: -
@@ -65,6 +69,9 @@ public abstract class CursoredLinkedList<T>
     public abstract int getLastRemoveStatus();
     //Precondition: -
     public abstract int getLastFindStatus();
+    //Precondition: -
+    public abstract int getLastReplaceStatus();
+
 
     //Requests Cursor
     //Precondition: list not empty
